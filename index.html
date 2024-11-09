@@ -13,33 +13,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        body {
-            background-color: #ffffff;
-            background-image: 
-                linear-gradient(135deg, #f5f5f5 25%, transparent 25%),
-                linear-gradient(225deg, #f5f5f5 25%, transparent 25%),
-                linear-gradient(45deg, #f5f5f5 25%, transparent 25%),
-                linear-gradient(315deg, #f5f5f5 25%, transparent 25%);
-            background-position: 10px 0, 10px 0, 0 0, 0 0;
-            background-size: 20px 20px;
-            background-repeat: repeat;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
         .logo-container {
             width: 120px;
             height: 120px;
@@ -255,6 +228,178 @@
             color: #666;
             margin: 0.5rem 0;
         }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            z-index: 1000;
+            animation: vibrate 2s infinite;
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Animación de vibración */
+        @keyframes vibrate {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Efecto hover */
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Media query para dispositivos móviles */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .whatsapp-float svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse 2s ease-out infinite;
+            opacity: 0.8;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Animación de flotación suave */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Animación de pulso */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            70% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Efecto hover mejorado */
+        .whatsapp-float:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-float:hover img {
+            transform: rotate(-10deg);
+        }
+
+        /* Media query para dispositivos móviles */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        /* Mejora del fondo de la página */
+        body {
+            background-color: #ffffff;
+            background-image: 
+                linear-gradient(135deg, rgba(245, 245, 245, 0.6) 25%, transparent 25%),
+                linear-gradient(225deg, rgba(245, 245, 245, 0.6) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(245, 245, 245, 0.6) 25%, transparent 25%),
+                linear-gradient(315deg, rgba(245, 245, 245, 0.6) 25%, transparent 25%);
+            background-position: 15px 0, 15px 0, 0 0, 0 0;
+            background-size: 25px 25px;
+            background-repeat: repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -322,5 +467,13 @@
             <p>© 2024 Milazzo Jewelry - Todos los derechos reservados</p>
         </footer>
     </div>
+    <a href="https://wa.me/17868342443?text=Hola,%20quiero%20más%20información" 
+    class="whatsapp-float" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Chatear por WhatsApp">
+     <img src="https://res.cloudinary.com/cmacha2/image/upload/v1731183849/osdpwbteajfghqkeame0.png" 
+          alt="WhatsApp Logo">
+ </a>
 </body>
 </html>
